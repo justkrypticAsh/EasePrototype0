@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A7EE0E08DA723F2AB98DFC5 /* ExtractionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE6CE7C8F24C867989268A /* ExtractionItems.swift */; };
+		181B5AC594A13FAEEF4C0042 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4C43F5963D65A9BDD63A1 /* User.swift */; };
+		193B0AA2E09E770E220F8E11 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF30153FD87A77A0597FF9C /* WatchContentView.swift */; };
+		1B8749D50CC0727FAA3FE224 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39F2D3531975E58A390F53 /* KeychainHelper.swift */; };
+		1BF831105C196D655FC09E5E /* EaseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C72D1ABB9163A7B9C6100F /* EaseWidget.swift */; };
+		3195FF01952DCEB840D3C14F /* Brief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062B880F0979EB77D6253F /* Brief.swift */; };
+		328414BE65D73B20DD5A30B7 /* TasksDependenciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C24C8A5454B7730C3A0DF1 /* TasksDependenciesView.swift */; };
+		32C8B6C1E0041543EB69A25D /* EaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF96364BA2561232366AFF2 /* EaseApp.swift */; };
+		4315DF7B6E8058FDCF565698 /* OfflineRecordingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54193FF30234CBA86B9B17E8 /* OfflineRecordingQueue.swift */; };
+		4A64F98E70D3DFD363CA7F4F /* EventKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F18FB4574A367B2BA27E7 /* EventKitService.swift */; };
+		53EECE517ACF1A6555F2BBCB /* SpeechSynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E327EA323350E6437412A4 /* SpeechSynthesizerService.swift */; };
+		640BF04F84862105C2349B89 /* MembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D416E6C7038EF2206B1488 /* MembersView.swift */; };
+		669F8BCBEE78BA1FE8B3A85B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9306EC8335FF0B23EFEBDCC6 /* Project.swift */; };
+		6A889E1E12A24B1ACC249C3A /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091BBB1A39DF2929B4A62AB /* Meeting.swift */; };
+		6F7AA7685C5FEEBE8FC4707F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21AF652FDF288396C6F856 /* APIClient.swift */; };
+		8C32BF91ECF71AA0796BECDF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772DCA7D715B0BBE70FEF71 /* SettingsView.swift */; };
+		94C532DF09A01FD03B6CC7DB /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C5B191CDFA4AD102943A14 /* WatchApp.swift */; };
+		991719C7D26AC6E40CBC3E68 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE9FA0948A1DA4200D8F0B2 /* AudioPlayer.swift */; };
+		9E0C03903B06EBE6D29B47B0 /* ProjectMemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AABD2F8506B34787BC152A6 /* ProjectMemoryView.swift */; };
+		A1E4D8EB9C82BE40A17810BE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC374F748E874C7B5C2C6731 /* DashboardView.swift */; };
+		A76BC345356F8C8B0F18B92F /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DBCAC92E7D0AF2F4315A8 /* AudioRecorder.swift */; };
+		C7A0E615854C29055FDEE823 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B5C675A00C1D22E929FD8 /* SignupView.swift */; };
+		CE8E764132617AEAC9C97479 /* DiscussionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12407DA2D8AF3329A6504A7F /* DiscussionDetailView.swift */; };
+		D0FE881240F49C2F062B75CF /* TranscriptSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232204D4B8768410A8ACD6C /* TranscriptSegment.swift */; };
+		D2C8003EEBB60B069DC08494 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F8286DBA110DA94C65BA79 /* WatchSessionManager.swift */; };
+		D94CEC9BA778B789E8FC00AB /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C477574BD365363B243289 /* BriefingView.swift */; };
+		D97728AE726CCE8AA2DD89DF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5E07209652E1FE7B85D9C /* MainTabView.swift */; };
+		DC5AB4F5BB3CFC94623B9B6D /* ProjectSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7C1703A4FBC71EFFC7A0CE /* ProjectSpaceView.swift */; };
+		E1B797A5A17D4F1E36E2CFBC /* MemoryLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A5AD2CFACFDCC295C9CAC /* MemoryLink.swift */; };
+		EB9C63557CEB5B6B1FAEE2E3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC66161454BE9829529A4118 /* LoginView.swift */; };
+		EDA6F0DA6B8A943327A36474 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC0D9EDDF8AB5368C43B65 /* AppEnvironment.swift */; };
+		F73FC4A98E53CB19EC9A0CEB /* CaptureFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9112BBD4F23EF58C4754C4 /* CaptureFlowView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0232204D4B8768410A8ACD6C /* TranscriptSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptSegment.swift; sourceTree = "<group>"; };
+		025F9D9B7F2EE9711E00136B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		05C477574BD365363B243289 /* BriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingView.swift; sourceTree = "<group>"; };
+		0772DCA7D715B0BBE70FEF71 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0D9112BBD4F23EF58C4754C4 /* CaptureFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureFlowView.swift; sourceTree = "<group>"; };
+		10F8286DBA110DA94C65BA79 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		12407DA2D8AF3329A6504A7F /* DiscussionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionDetailView.swift; sourceTree = "<group>"; };
+		14D4C43F5963D65A9BDD63A1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1FD14DA83F7E0E77CF1B9AE0 /* EaseWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = EaseWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE9FA0948A1DA4200D8F0B2 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		31E327EA323350E6437412A4 /* SpeechSynthesizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerService.swift; sourceTree = "<group>"; };
+		3E7C1703A4FBC71EFFC7A0CE /* ProjectSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSpaceView.swift; sourceTree = "<group>"; };
+		4BF96364BA2561232366AFF2 /* EaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseApp.swift; sourceTree = "<group>"; };
+		4F4F18FB4574A367B2BA27E7 /* EventKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKitService.swift; sourceTree = "<group>"; };
+		520A5AD2CFACFDCC295C9CAC /* MemoryLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLink.swift; sourceTree = "<group>"; };
+		54193FF30234CBA86B9B17E8 /* OfflineRecordingQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineRecordingQueue.swift; sourceTree = "<group>"; };
+		57DE6CE7C8F24C867989268A /* ExtractionItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionItems.swift; sourceTree = "<group>"; };
+		5EF30153FD87A77A0597FF9C /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
+		6295AAC034FB6F72DA2C1AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		62C24C8A5454B7730C3A0DF1 /* TasksDependenciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDependenciesView.swift; sourceTree = "<group>"; };
+		72062B880F0979EB77D6253F /* Brief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brief.swift; sourceTree = "<group>"; };
+		7C39F2D3531975E58A390F53 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		7DF042EB004317C81F633EDB /* EasePrototype0.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EasePrototype0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DA739FE1768CDC0182EF0AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9306EC8335FF0B23EFEBDCC6 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		94C5B191CDFA4AD102943A14 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
+		94D416E6C7038EF2206B1488 /* MembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersView.swift; sourceTree = "<group>"; };
+		950B5C675A00C1D22E929FD8 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		9AABD2F8506B34787BC152A6 /* ProjectMemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemoryView.swift; sourceTree = "<group>"; };
+		9B6DBCAC92E7D0AF2F4315A8 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		AC374F748E874C7B5C2C6731 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		CB21AF652FDF288396C6F856 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		DBBC0D9EDDF8AB5368C43B65 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		E091BBB1A39DF2929B4A62AB /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
+		E1C72D1ABB9163A7B9C6100F /* EaseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseWidget.swift; sourceTree = "<group>"; };
+		E9B5E07209652E1FE7B85D9C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		EC66161454BE9829529A4118 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FCD9FA40EE26A5F14D0391A9 /* EaseWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EaseWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		277BAC9364B5D9251A5C2215 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				EC66161454BE9829529A4118 /* LoginView.swift */,
+				950B5C675A00C1D22E929FD8 /* SignupView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2CBD0FA3CC08B63F9A58A9BD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC0D9EDDF8AB5368C43B65 /* AppEnvironment.swift */,
+				4BF96364BA2561232366AFF2 /* EaseApp.swift */,
+				8DA739FE1768CDC0182EF0AE /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		475751756C15975A14832191 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC374F748E874C7B5C2C6731 /* DashboardView.swift */,
+				E9B5E07209652E1FE7B85D9C /* MainTabView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		5481E76F8CAE30F0FBD4825B /* EasePrototype0 */ = {
+			isa = PBXGroup;
+			children = (
+				2CBD0FA3CC08B63F9A58A9BD /* App */,
+				5899322517E7C7A198C8574E /* Models */,
+				C9A3E14D5B11009760F29814 /* Services */,
+				877D0C46D4C9393122EC2BAC /* Views */,
+			);
+			path = EasePrototype0;
+			sourceTree = "<group>";
+		};
+		55993AB66B7248F508419A77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DF042EB004317C81F633EDB /* EasePrototype0.app */,
+				FCD9FA40EE26A5F14D0391A9 /* EaseWatch.app */,
+				1FD14DA83F7E0E77CF1B9AE0 /* EaseWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5899322517E7C7A198C8574E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72062B880F0979EB77D6253F /* Brief.swift */,
+				57DE6CE7C8F24C867989268A /* ExtractionItems.swift */,
+				E091BBB1A39DF2929B4A62AB /* Meeting.swift */,
+				520A5AD2CFACFDCC295C9CAC /* MemoryLink.swift */,
+				9306EC8335FF0B23EFEBDCC6 /* Project.swift */,
+				0232204D4B8768410A8ACD6C /* TranscriptSegment.swift */,
+				14D4C43F5963D65A9BDD63A1 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5BBE9CEC0299C8EB48C1C897 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				0D9112BBD4F23EF58C4754C4 /* CaptureFlowView.swift */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		610B524A4C22E08109F19719 /* EaseWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E1C72D1ABB9163A7B9C6100F /* EaseWidget.swift */,
+				6295AAC034FB6F72DA2C1AE1 /* Info.plist */,
+			);
+			path = EaseWidget;
+			sourceTree = "<group>";
+		};
+		7809257D46330051945D35ED /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0772DCA7D715B0BBE70FEF71 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		877D0C46D4C9393122EC2BAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				277BAC9364B5D9251A5C2215 /* Auth */,
+				5BBE9CEC0299C8EB48C1C897 /* Capture */,
+				475751756C15975A14832191 /* Dashboard */,
+				7809257D46330051945D35ED /* Settings */,
+				E610E559E6C9BB19A9021358 /* Space */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A45426CFCE53B6F68447A19A = {
+			isa = PBXGroup;
+			children = (
+				5481E76F8CAE30F0FBD4825B /* EasePrototype0 */,
+				B94AF8C02B0F23E732C873EF /* EaseWatch */,
+				610B524A4C22E08109F19719 /* EaseWidget */,
+				55993AB66B7248F508419A77 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B94AF8C02B0F23E732C873EF /* EaseWatch */ = {
+			isa = PBXGroup;
+			children = (
+				025F9D9B7F2EE9711E00136B /* Info.plist */,
+				94C5B191CDFA4AD102943A14 /* WatchApp.swift */,
+				5EF30153FD87A77A0597FF9C /* WatchContentView.swift */,
+			);
+			path = EaseWatch;
+			sourceTree = "<group>";
+		};
+		C9A3E14D5B11009760F29814 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CB21AF652FDF288396C6F856 /* APIClient.swift */,
+				2FE9FA0948A1DA4200D8F0B2 /* AudioPlayer.swift */,
+				9B6DBCAC92E7D0AF2F4315A8 /* AudioRecorder.swift */,
+				4F4F18FB4574A367B2BA27E7 /* EventKitService.swift */,
+				7C39F2D3531975E58A390F53 /* KeychainHelper.swift */,
+				54193FF30234CBA86B9B17E8 /* OfflineRecordingQueue.swift */,
+				31E327EA323350E6437412A4 /* SpeechSynthesizerService.swift */,
+				10F8286DBA110DA94C65BA79 /* WatchSessionManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E610E559E6C9BB19A9021358 /* Space */ = {
+			isa = PBXGroup;
+			children = (
+				05C477574BD365363B243289 /* BriefingView.swift */,
+				12407DA2D8AF3329A6504A7F /* DiscussionDetailView.swift */,
+				94D416E6C7038EF2206B1488 /* MembersView.swift */,
+				9AABD2F8506B34787BC152A6 /* ProjectMemoryView.swift */,
+				3E7C1703A4FBC71EFFC7A0CE /* ProjectSpaceView.swift */,
+				62C24C8A5454B7730C3A0DF1 /* TasksDependenciesView.swift */,
+			);
+			path = Space;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AF260BAE1434CD2E73933FA /* EasePrototype0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DA3DEBA2694AEF5FFFAE123 /* Build configuration list for PBXNativeTarget "EasePrototype0" */;
+			buildPhases = (
+				F36F0B6E4EB5340CE933FF3D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasePrototype0;
+			packageProductDependencies = (
+			);
+			productName = EasePrototype0;
+			productReference = 7DF042EB004317C81F633EDB /* EasePrototype0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92D8EB0628C8DE3DEB6E6522 /* EaseWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EB5A338C89C4058255B5731 /* Build configuration list for PBXNativeTarget "EaseWidget" */;
+			buildPhases = (
+				A04990AFA90FB3E9FE29EE1B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EaseWidget;
+			packageProductDependencies = (
+			);
+			productName = EaseWidget;
+			productReference = 1FD14DA83F7E0E77CF1B9AE0 /* EaseWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E8A65C961AF5BC1C42552E89 /* EaseWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59A1B1108FCFE811D3AC0EE1 /* Build configuration list for PBXNativeTarget "EaseWatch" */;
+			buildPhases = (
+				3C12BE50172C234940BCAD4E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EaseWatch;
+			packageProductDependencies = (
+			);
+			productName = EaseWatch;
+			productReference = FCD9FA40EE26A5F14D0391A9 /* EaseWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		825BA0B3DF160F8AA5CAFD29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					6AF260BAE1434CD2E73933FA = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					92D8EB0628C8DE3DEB6E6522 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					E8A65C961AF5BC1C42552E89 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B247519776D4F25E39FD70FC /* Build configuration list for PBXProject "EasePrototype0" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A45426CFCE53B6F68447A19A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 55993AB66B7248F508419A77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AF260BAE1434CD2E73933FA /* EasePrototype0 */,
+				E8A65C961AF5BC1C42552E89 /* EaseWatch */,
+				92D8EB0628C8DE3DEB6E6522 /* EaseWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C12BE50172C234940BCAD4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94C532DF09A01FD03B6CC7DB /* WatchApp.swift in Sources */,
+				193B0AA2E09E770E220F8E11 /* WatchContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A04990AFA90FB3E9FE29EE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BF831105C196D655FC09E5E /* EaseWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F36F0B6E4EB5340CE933FF3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7AA7685C5FEEBE8FC4707F /* APIClient.swift in Sources */,
+				EDA6F0DA6B8A943327A36474 /* AppEnvironment.swift in Sources */,
+				991719C7D26AC6E40CBC3E68 /* AudioPlayer.swift in Sources */,
+				A76BC345356F8C8B0F18B92F /* AudioRecorder.swift in Sources */,
+				3195FF01952DCEB840D3C14F /* Brief.swift in Sources */,
+				D94CEC9BA778B789E8FC00AB /* BriefingView.swift in Sources */,
+				F73FC4A98E53CB19EC9A0CEB /* CaptureFlowView.swift in Sources */,
+				A1E4D8EB9C82BE40A17810BE /* DashboardView.swift in Sources */,
+				CE8E764132617AEAC9C97479 /* DiscussionDetailView.swift in Sources */,
+				32C8B6C1E0041543EB69A25D /* EaseApp.swift in Sources */,
+				4A64F98E70D3DFD363CA7F4F /* EventKitService.swift in Sources */,
+				0A7EE0E08DA723F2AB98DFC5 /* ExtractionItems.swift in Sources */,
+				1B8749D50CC0727FAA3FE224 /* KeychainHelper.swift in Sources */,
+				EB9C63557CEB5B6B1FAEE2E3 /* LoginView.swift in Sources */,
+				D97728AE726CCE8AA2DD89DF /* MainTabView.swift in Sources */,
+				6A889E1E12A24B1ACC249C3A /* Meeting.swift in Sources */,
+				640BF04F84862105C2349B89 /* MembersView.swift in Sources */,
+				E1B797A5A17D4F1E36E2CFBC /* MemoryLink.swift in Sources */,
+				4315DF7B6E8058FDCF565698 /* OfflineRecordingQueue.swift in Sources */,
+				669F8BCBEE78BA1FE8B3A85B /* Project.swift in Sources */,
+				9E0C03903B06EBE6D29B47B0 /* ProjectMemoryView.swift in Sources */,
+				DC5AB4F5BB3CFC94623B9B6D /* ProjectSpaceView.swift in Sources */,
+				8C32BF91ECF71AA0796BECDF /* SettingsView.swift in Sources */,
+				C7A0E615854C29055FDEE823 /* SignupView.swift in Sources */,
+				53EECE517ACF1A6555F2BBCB /* SpeechSynthesizerService.swift in Sources */,
+				328414BE65D73B20DD5A30B7 /* TasksDependenciesView.swift in Sources */,
+				D0FE881240F49C2F062B75CF /* TranscriptSegment.swift in Sources */,
+				181B5AC594A13FAEEF4C0042 /* User.swift in Sources */,
+				D2C8003EEBB60B069DC08494 /* WatchSessionManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4780BA52E9B437DCF1029D2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EaseWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ease.EasePrototype0.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		52832EEDA76CFFB9AF8E82AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		542415C9CC75686D071A5BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = EasePrototype0/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ease.EasePrototype0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		658E9E5CE7825B9ADEAFA91B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EaseWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ease.EasePrototype0.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8E25DC377897059BC146B792 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		A0461ACA5FCF4FDB1E8B8F8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EaseWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ease.EasePrototype0.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		CFCF6E43DF35C192C9D80A8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EaseWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ease.EasePrototype0.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		D2D65B88850EC2863FAC3987 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = EasePrototype0/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ease.EasePrototype0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0EB5A338C89C4058255B5731 /* Build configuration list for PBXNativeTarget "EaseWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				658E9E5CE7825B9ADEAFA91B /* Debug */,
+				4780BA52E9B437DCF1029D2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1DA3DEBA2694AEF5FFFAE123 /* Build configuration list for PBXNativeTarget "EasePrototype0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2D65B88850EC2863FAC3987 /* Debug */,
+				542415C9CC75686D071A5BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		59A1B1108FCFE811D3AC0EE1 /* Build configuration list for PBXNativeTarget "EaseWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFCF6E43DF35C192C9D80A8A /* Debug */,
+				A0461ACA5FCF4FDB1E8B8F8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B247519776D4F25E39FD70FC /* Build configuration list for PBXProject "EasePrototype0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E25DC377897059BC146B792 /* Debug */,
+				52832EEDA76CFFB9AF8E82AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 825BA0B3DF160F8AA5CAFD29 /* Project object */;
+}
