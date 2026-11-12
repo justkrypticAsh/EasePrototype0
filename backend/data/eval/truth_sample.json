@@ -1,0 +1,33 @@
+{
+  "test_case_id": "TC-01-consulting-hinglish",
+  "description": "3-speaker product & architecture discussion with Hinglish code-switching",
+  "audio_duration_seconds": 18.0,
+  "language": "Hinglish",
+  "expected_speakers": 3,
+  "segments": [
+    {
+      "speaker": "Ashish",
+      "start_ms": 1000,
+      "end_ms": 4500,
+      "text": "We need to finalize the API architecture before starting the frontend."
+    },
+    {
+      "speaker": "Rohan",
+      "start_ms": 5000,
+      "end_ms": 9200,
+      "text": "Haan theek hai, I promise to have the OpenAPI spec documented by Friday."
+    },
+    {
+      "speaker": "Ashish",
+      "start_ms": 9500,
+      "end_ms": 13000,
+      "text": "Decision is agreed: we will use FastAPI with Pydantic v2 schemas."
+    },
+    {
+      "speaker": "Priya",
+      "start_ms": 13500,
+      "end_ms": 17200,
+      "text": "Our database migration depends on client approval of the security audit."
+    }
+  ]
+}
