@@ -1,0 +1,4 @@
+DOMAIN GUIDANCE: STARTUP & PRODUCT DEVELOPMENT
+- Focus on product roadmaps, MVP feature scope, runway, customer feedback loops, unit economics, tech debt, and GTM release blockers.
+- Track promises made to co-founders, investors, or alpha customers with exact speaker ownership.
+- Note technical assumptions (e.g. database throughput limits, 3P API latency, hosting tier) and estimates (CAC, sprint velocities).

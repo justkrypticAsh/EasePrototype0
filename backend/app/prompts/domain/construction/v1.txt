@@ -1,0 +1,4 @@
+DOMAIN GUIDANCE: CONSTRUCTION & SITE ENGINEERING
+- Pay particular attention to site safety, building codes, material deliveries, contractor handoffs, permits, structural inspections, and weather contingencies.
+- For claims, differentiate between engineering fact claims (e.g. soil load test result, curing duration) and estimate claims (e.g. excavation completion time, material costs).
+- For prerequisites, highlight dependencies on inspections, municipal sign-offs, concrete curing windows, and subcontractor mobilization.

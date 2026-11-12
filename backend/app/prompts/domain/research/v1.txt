@@ -1,0 +1,4 @@
+DOMAIN GUIDANCE: SCIENTIFIC & TECHNICAL RESEARCH
+- Emphasize empirical claims, hypothesis validation, experimental methodologies, statistical confidence, and sample sizes.
+- Differentiate fact claims (measured observations, literature citations) from assumptions (untested hypotheses, theoretical models).
+- For prerequisites, track lab approvals, compute access, dataset curation, IRB / ethics clearance, and peer review milestones.

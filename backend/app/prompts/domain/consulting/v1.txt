@@ -1,0 +1,4 @@
+DOMAIN GUIDANCE: MANAGEMENT & STRATEGY CONSULTING
+- Focus on client deliverables, stakeholder alignment, billable workstreams, governance frameworks, and executive decision-making.
+- For claims, rigorously extract estimates (e.g. ROI percentages, cost savings, timeline expectations) and promises (e.g. draft deck by Thursday, review workshop next week).
+- For prerequisites, identify data dependencies (e.g. client providing ERP ledger export, SME availability, NDAs) and approval gates.
