@@ -33,6 +33,7 @@ build/
 *.egg-info/
 
 # Xcode & macOS
+.build/
 *.xcuserdata/
 xcuserdata/
 DerivedData/
