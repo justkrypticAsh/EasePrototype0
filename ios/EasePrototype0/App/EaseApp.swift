@@ -8,16 +8,9 @@ struct EaseApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Group {
-                if env.isAuthenticated {
-                    MainTabView()
-                        .environmentObject(env)
-                } else {
-                    LoginView()
-                        .environmentObject(env)
-                }
-            }
-            .preferredColorScheme(.dark)
+            MainTabView()
+                .environmentObject(env)
+                .preferredColorScheme(.dark)
         }
     }
 }

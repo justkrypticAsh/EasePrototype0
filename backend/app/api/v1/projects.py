@@ -99,6 +99,34 @@ async def list_my_projects(
                 created_at=project.created_at
             )
         )
+
+    # In prototype/demo mode, auto-provision default workspace if empty
+    if not results and current_user.email == "demo@ease.ai":
+        default_p = Project(
+            name="EASE Architecture Space",
+            description="In-person discussion capture, speaker diarization & cross-discussion memory.",
+            domain="startup",
+            language_code="auto"
+        )
+        db.add(default_p)
+        await db.flush()
+        mem = ProjectMember(project_id=default_p.id, user_id=current_user.id, role="owner")
+        db.add(mem)
+        await db.commit()
+        await db.refresh(default_p)
+        results.append(
+            ProjectResponse(
+                id=default_p.id,
+                name=default_p.name,
+                description=default_p.description,
+                domain=default_p.domain,
+                language_code=default_p.language_code,
+                recording_policy_text=default_p.recording_policy_text,
+                role="owner",
+                created_at=default_p.created_at
+            )
+        )
+
     return results
 
 

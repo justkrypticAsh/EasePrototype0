@@ -69,12 +69,15 @@ struct SettingsView: View {
                     }
                     .listRowBackground(Color(red: 0.12, green: 0.16, blue: 0.24))
 
-                    // Session
+                    // Session / Prototype Mode
                     Section {
-                        Button("Sign Out") {
-                            env.logout()
+                        HStack {
+                            Text("Prototype Mode")
+                            Spacer()
+                            Text("Direct Access Active")
+                                .foregroundColor(.cyan)
+                                .font(.caption)
                         }
-                        .foregroundColor(.red)
                     }
                     .listRowBackground(Color(red: 0.12, green: 0.16, blue: 0.24))
                 }

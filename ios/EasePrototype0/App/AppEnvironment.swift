@@ -2,26 +2,46 @@
 import Foundation
 import Combine
 
+@MainActor
 final class AppEnvironment: ObservableObject {
-    @Published var isAuthenticated: Bool = false
-    @Published var currentUser: User?
-    @Published var projects: [Project] = []
+    @Published var isAuthenticated: Bool = true
+    @Published var currentUser: User? = User(
+        id: "dev-user-001",
+        email: "ashish@ease.ai",
+        fullName: "Ashish Sharma",
+        isActive: true,
+        createdAt: nil
+    )
+    @Published var projects: [Project] = [
+        Project(
+            id: "ease-core-space",
+            name: "EASE Architecture Space",
+            description: "In-person discussion capture, speaker separation & cross-discussion memory.",
+            domain: "startup",
+            languageCode: "auto",
+            recordingPolicyText: "Explicit affirmative consent required before recording.",
+            role: "owner",
+            createdAt: nil
+        )
+    ]
     @Published var activeProject: Project?
     @Published var errorMessage: String?
 
     init() {
-        checkAuthStatus()
+        if let first = projects.first {
+            self.activeProject = first
+        }
+        // Ensure default token in Keychain for backend API calls
+        if KeychainHelper.shared.readString(key: "ease_access_token") == nil {
+            KeychainHelper.shared.saveString(key: "ease_access_token", value: "demo-token")
+        }
+        Task {
+            await loadProjects()
+        }
     }
 
     func checkAuthStatus() {
-        if let token = KeychainHelper.shared.readString(key: "ease_access_token") {
-            isAuthenticated = !token.isEmpty
-            if isAuthenticated {
-                Task {
-                    await loadProjects()
-                }
-            }
-        }
+        isAuthenticated = true
     }
 
     func setSession(tokenResp: TokenResponse) {
@@ -44,25 +64,27 @@ final class AppEnvironment: ObservableObject {
     }
 
     func logout() {
-        KeychainHelper.shared.delete(key: "ease_access_token")
-        KeychainHelper.shared.delete(key: "ease_refresh_token")
-        KeychainHelper.shared.delete(key: "ease_user_id")
-        isAuthenticated = false
-        currentUser = nil
-        projects = []
-        activeProject = nil
+        currentUser = User(
+            id: "dev-user-001",
+            email: "ashish@ease.ai",
+            fullName: "Ashish Sharma",
+            isActive: true,
+            createdAt: nil
+        )
+        isAuthenticated = true
     }
 
-    @MainActor
     func loadProjects() async {
         do {
             let fetched: [Project] = try await APIClient.shared.request(path: "/projects")
-            self.projects = fetched
-            if activeProject == nil, let first = fetched.first {
-                self.activeProject = first
+            if !fetched.isEmpty {
+                self.projects = fetched
+                if activeProject == nil || !fetched.contains(where: { $0.id == activeProject?.id }) {
+                    self.activeProject = fetched.first
+                }
             }
         } catch {
-            print("Failed to load projects: \(error)")
+            print("Backend offline or unreachable, using local prototype space: \(error)")
         }
     }
 }
