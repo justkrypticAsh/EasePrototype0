@@ -1,0 +1,48 @@
+# Environment & Secrets
+.env
+*.env
+!.env.example
+
+# Audio files
+*.m4a
+*.wav
+*.mp3
+*.aac
+*.flac
+*.ogg
+audio_uploads/
+recordings/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Python virtual environment & cache
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Xcode & macOS
+*.xcuserdata/
+xcuserdata/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Biometric / Local voice embeddings storage
+voice_embeddings_vault/
