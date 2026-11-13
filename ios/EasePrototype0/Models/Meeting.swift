@@ -29,11 +29,11 @@ struct MeetingSummary: Codable, Identifiable {
 }
 
 struct MeetingDetailResponse: Codable {
-    let meeting: MeetingDetail
-    let transcript: [TranscriptSegment]
-    let claims: [ClaimModel]
-    let decisions: [DecisionModel]
-    let prerequisites: [PrerequisiteModel]
+    var meeting: MeetingDetail
+    var transcript: [TranscriptSegment]
+    var claims: [ClaimModel]
+    var decisions: [DecisionModel]
+    var prerequisites: [PrerequisiteModel]
 }
 
 struct MeetingDetail: Codable, Identifiable {

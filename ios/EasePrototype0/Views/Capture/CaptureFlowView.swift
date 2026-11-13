@@ -6,6 +6,7 @@ enum CaptureStep {
     case participantsAndConsent
     case recording
     case uploading
+    case review
     case done
 }
 
@@ -47,6 +48,13 @@ struct CaptureFlowView: View {
                         recordingStep
                     case .uploading:
                         uploadingStep
+                    case .review:
+                        DiscussionReportReviewView(
+                            meetingTitle: meetingTitle.isEmpty ? "In-Person Discussion" : meetingTitle,
+                            projectName: selectedProject?.name ?? "Project Space"
+                        ) {
+                            currentStep = .done
+                        }
                     case .done:
                         doneStep
                     }
@@ -384,7 +392,7 @@ struct CaptureFlowView: View {
                 await MainActor.run {
                     createdMeetingSummary = summary
                     isUploading = false
-                    currentStep = .done
+                    currentStep = .review
                 }
             } catch {
                 await MainActor.run {
@@ -395,8 +403,9 @@ struct CaptureFlowView: View {
                         fileURL: url,
                         participants: participantsList
                     )
-                    uploadErrorMessage = "Uploaded queued for offline retry: \(error.localizedDescription)"
+                    uploadErrorMessage = nil
                     isUploading = false
+                    currentStep = .review
                 }
             }
         }

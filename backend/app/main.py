@@ -17,7 +17,8 @@ from backend.app.api.v1 import (
     tasks
 )
 from backend.app.config import get_settings
-from backend.app.database import Base, engine
+from backend.app.database import Base, engine, AsyncSessionLocal
+from backend.app.services.demo_seeder import seed_demo_data_if_needed, reset_demo_data
 
 
 @asynccontextmanager
@@ -25,6 +26,14 @@ async def lifespan(app: FastAPI):
     # Initialize SQLite database schema
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
+
+    # Seed demo data for "Product Launch" if not present
+    async with AsyncSessionLocal() as session:
+        try:
+            await seed_demo_data_if_needed(session)
+        except Exception as e:
+            print(f"Warning: Demo seeder notice: {e}")
+
     yield
     await engine.dispose()
 
@@ -81,3 +90,10 @@ async def health_check():
         "env": settings.APP_ENV,
         "database": "connected"
     }
+
+
+@app.post("/api/v1/demo/reset", tags=["Demo"])
+async def reset_demo_endpoint():
+    async with AsyncSessionLocal() as session:
+        await reset_demo_data(session)
+    return {"status": "success", "message": "Product Launch demo dataset reset successfully"}

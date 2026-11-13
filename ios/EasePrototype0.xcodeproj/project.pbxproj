@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00BEF17E34D5A613A35E89B3 /* DiscussionReportReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC43D86CCDFE9F90AA8E69F /* DiscussionReportReviewView.swift */; };
 		0A7EE0E08DA723F2AB98DFC5 /* ExtractionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE6CE7C8F24C867989268A /* ExtractionItems.swift */; };
 		181B5AC594A13FAEEF4C0042 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4C43F5963D65A9BDD63A1 /* User.swift */; };
 		193B0AA2E09E770E220F8E11 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF30153FD87A77A0597FF9C /* WatchContentView.swift */; };
@@ -18,12 +19,15 @@
 		328414BE65D73B20DD5A30B7 /* TasksDependenciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C24C8A5454B7730C3A0DF1 /* TasksDependenciesView.swift */; };
 		32C8B6C1E0041543EB69A25D /* EaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF96364BA2561232366AFF2 /* EaseApp.swift */; };
 		4315DF7B6E8058FDCF565698 /* OfflineRecordingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54193FF30234CBA86B9B17E8 /* OfflineRecordingQueue.swift */; };
+		4825E5F1347E3BB6F99175C7 /* SpeakerNameEditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE256E22CE368E7C8CA92994 /* SpeakerNameEditSheet.swift */; };
 		4A64F98E70D3DFD363CA7F4F /* EventKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F18FB4574A367B2BA27E7 /* EventKitService.swift */; };
 		53EECE517ACF1A6555F2BBCB /* SpeechSynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E327EA323350E6437412A4 /* SpeechSynthesizerService.swift */; };
+		5867DBBE9C2334EA21BB3AE3 /* AppleEcosystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5031BD30044D85F1CDB2E8B /* AppleEcosystemView.swift */; };
 		640BF04F84862105C2349B89 /* MembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D416E6C7038EF2206B1488 /* MembersView.swift */; };
 		669F8BCBEE78BA1FE8B3A85B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9306EC8335FF0B23EFEBDCC6 /* Project.swift */; };
 		6A889E1E12A24B1ACC249C3A /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091BBB1A39DF2929B4A62AB /* Meeting.swift */; };
 		6F7AA7685C5FEEBE8FC4707F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21AF652FDF288396C6F856 /* APIClient.swift */; };
+		84D700E7AFD9E743CCFE06CC /* ScheduleDiscussionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FC82F61F0F2F2C977902C /* ScheduleDiscussionSheet.swift */; };
 		8C32BF91ECF71AA0796BECDF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772DCA7D715B0BBE70FEF71 /* SettingsView.swift */; };
 		8DF49E6A23C48A0695D86DFA /* ICloudWorkspaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203DDCF3166FCF899EE27397 /* ICloudWorkspaceService.swift */; };
 		94C532DF09A01FD03B6CC7DB /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C5B191CDFA4AD102943A14 /* WatchApp.swift */; };
@@ -31,14 +35,18 @@
 		9E0C03903B06EBE6D29B47B0 /* ProjectMemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AABD2F8506B34787BC152A6 /* ProjectMemoryView.swift */; };
 		A1E4D8EB9C82BE40A17810BE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC374F748E874C7B5C2C6731 /* DashboardView.swift */; };
 		A76BC345356F8C8B0F18B92F /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DBCAC92E7D0AF2F4315A8 /* AudioRecorder.swift */; };
+		AD16CAB5EA4A25866A4A0D30 /* ProjectSpaceContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C167CE26F5254C660328DA96 /* ProjectSpaceContainerView.swift */; };
 		C7A0E615854C29055FDEE823 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B5C675A00C1D22E929FD8 /* SignupView.swift */; };
+		CC213C2A03D092ED9B6D1F66 /* PlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AE2B0ED9A7B0AEDD422554 /* PlanningView.swift */; };
 		CE8E764132617AEAC9C97479 /* DiscussionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12407DA2D8AF3329A6504A7F /* DiscussionDetailView.swift */; };
 		D0FE881240F49C2F062B75CF /* TranscriptSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232204D4B8768410A8ACD6C /* TranscriptSegment.swift */; };
 		D2C8003EEBB60B069DC08494 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F8286DBA110DA94C65BA79 /* WatchSessionManager.swift */; };
 		D94CEC9BA778B789E8FC00AB /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C477574BD365363B243289 /* BriefingView.swift */; };
 		D97728AE726CCE8AA2DD89DF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5E07209652E1FE7B85D9C /* MainTabView.swift */; };
 		DC5AB4F5BB3CFC94623B9B6D /* ProjectSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7C1703A4FBC71EFFC7A0CE /* ProjectSpaceView.swift */; };
+		DC72E97B011FB86E33E6DD8E /* DecisionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2EB099B0A6062A99A3E053 /* DecisionHistoryView.swift */; };
 		E1B797A5A17D4F1E36E2CFBC /* MemoryLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A5AD2CFACFDCC295C9CAC /* MemoryLink.swift */; };
+		E3EC1E2B2B78D88D7874A012 /* ConsentAuditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E47D3025028F9AA7C2D64DA /* ConsentAuditSheet.swift */; };
 		EB9C63557CEB5B6B1FAEE2E3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC66161454BE9829529A4118 /* LoginView.swift */; };
 		EDA6F0DA6B8A943327A36474 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC0D9EDDF8AB5368C43B65 /* AppEnvironment.swift */; };
 		F73FC4A98E53CB19EC9A0CEB /* CaptureFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9112BBD4F23EF58C4754C4 /* CaptureFlowView.swift */; };
@@ -57,6 +65,8 @@
 		203DDCF3166FCF899EE27397 /* ICloudWorkspaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudWorkspaceService.swift; sourceTree = "<group>"; };
 		2FE9FA0948A1DA4200D8F0B2 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		31E327EA323350E6437412A4 /* SpeechSynthesizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerService.swift; sourceTree = "<group>"; };
+		33AE2B0ED9A7B0AEDD422554 /* PlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningView.swift; sourceTree = "<group>"; };
+		3E47D3025028F9AA7C2D64DA /* ConsentAuditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentAuditSheet.swift; sourceTree = "<group>"; };
 		3E7C1703A4FBC71EFFC7A0CE /* ProjectSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSpaceView.swift; sourceTree = "<group>"; };
 		4BF96364BA2561232366AFF2 /* EaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseApp.swift; sourceTree = "<group>"; };
 		4F4F18FB4574A367B2BA27E7 /* EventKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKitService.swift; sourceTree = "<group>"; };
@@ -68,23 +78,29 @@
 		62C24C8A5454B7730C3A0DF1 /* TasksDependenciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDependenciesView.swift; sourceTree = "<group>"; };
 		72062B880F0979EB77D6253F /* Brief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brief.swift; sourceTree = "<group>"; };
 		7C39F2D3531975E58A390F53 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		7C8FC82F61F0F2F2C977902C /* ScheduleDiscussionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDiscussionSheet.swift; sourceTree = "<group>"; };
 		7DF042EB004317C81F633EDB /* EasePrototype0.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EasePrototype0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E2EB099B0A6062A99A3E053 /* DecisionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionHistoryView.swift; sourceTree = "<group>"; };
 		8DA739FE1768CDC0182EF0AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9306EC8335FF0B23EFEBDCC6 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		94C5B191CDFA4AD102943A14 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
 		94D416E6C7038EF2206B1488 /* MembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersView.swift; sourceTree = "<group>"; };
 		950B5C675A00C1D22E929FD8 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		9AABD2F8506B34787BC152A6 /* ProjectMemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemoryView.swift; sourceTree = "<group>"; };
+		9AC43D86CCDFE9F90AA8E69F /* DiscussionReportReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionReportReviewView.swift; sourceTree = "<group>"; };
 		9B6DBCAC92E7D0AF2F4315A8 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		AC374F748E874C7B5C2C6731 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C167CE26F5254C660328DA96 /* ProjectSpaceContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSpaceContainerView.swift; sourceTree = "<group>"; };
 		C5F63E3A55BF46EE2311C732 /* GlassComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassComponents.swift; sourceTree = "<group>"; };
 		CB21AF652FDF288396C6F856 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		DBBC0D9EDDF8AB5368C43B65 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E091BBB1A39DF2929B4A62AB /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		E1C72D1ABB9163A7B9C6100F /* EaseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseWidget.swift; sourceTree = "<group>"; };
+		E5031BD30044D85F1CDB2E8B /* AppleEcosystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleEcosystemView.swift; sourceTree = "<group>"; };
 		E9B5E07209652E1FE7B85D9C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		EA42B4DE3FDE7550921BFAEF /* CollaborationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationModels.swift; sourceTree = "<group>"; };
 		EC66161454BE9829529A4118 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EE256E22CE368E7C8CA92994 /* SpeakerNameEditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerNameEditSheet.swift; sourceTree = "<group>"; };
 		FCD9FA40EE26A5F14D0391A9 /* EaseWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EaseWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				0D9112BBD4F23EF58C4754C4 /* CaptureFlowView.swift */,
+				9AC43D86CCDFE9F90AA8E69F /* DiscussionReportReviewView.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -170,9 +187,18 @@
 			path = EaseWidget;
 			sourceTree = "<group>";
 		};
+		6F1A6135E6D72CC99A3069CE /* AppleEcosystem */ = {
+			isa = PBXGroup;
+			children = (
+				E5031BD30044D85F1CDB2E8B /* AppleEcosystemView.swift */,
+			);
+			path = AppleEcosystem;
+			sourceTree = "<group>";
+		};
 		7809257D46330051945D35ED /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3E47D3025028F9AA7C2D64DA /* ConsentAuditSheet.swift */,
 				0772DCA7D715B0BBE70FEF71 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -181,10 +207,12 @@
 		877D0C46D4C9393122EC2BAC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6F1A6135E6D72CC99A3069CE /* AppleEcosystem */,
 				277BAC9364B5D9251A5C2215 /* Auth */,
 				5BBE9CEC0299C8EB48C1C897 /* Capture */,
 				B638ED2B586CF22B1933DECD /* Components */,
 				475751756C15975A14832191 /* Dashboard */,
+				D6F67BBD5833611F345C7CDF /* Planning */,
 				7809257D46330051945D35ED /* Settings */,
 				E610E559E6C9BB19A9021358 /* Space */,
 			);
@@ -235,14 +263,26 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D6F67BBD5833611F345C7CDF /* Planning */ = {
+			isa = PBXGroup;
+			children = (
+				33AE2B0ED9A7B0AEDD422554 /* PlanningView.swift */,
+				7C8FC82F61F0F2F2C977902C /* ScheduleDiscussionSheet.swift */,
+			);
+			path = Planning;
+			sourceTree = "<group>";
+		};
 		E610E559E6C9BB19A9021358 /* Space */ = {
 			isa = PBXGroup;
 			children = (
 				05C477574BD365363B243289 /* BriefingView.swift */,
+				7E2EB099B0A6062A99A3E053 /* DecisionHistoryView.swift */,
 				12407DA2D8AF3329A6504A7F /* DiscussionDetailView.swift */,
 				94D416E6C7038EF2206B1488 /* MembersView.swift */,
 				9AABD2F8506B34787BC152A6 /* ProjectMemoryView.swift */,
+				C167CE26F5254C660328DA96 /* ProjectSpaceContainerView.swift */,
 				3E7C1703A4FBC71EFFC7A0CE /* ProjectSpaceView.swift */,
+				EE256E22CE368E7C8CA92994 /* SpeakerNameEditSheet.swift */,
 				62C24C8A5454B7730C3A0DF1 /* TasksDependenciesView.swift */,
 			);
 			path = Space;
@@ -370,14 +410,18 @@
 			files = (
 				6F7AA7685C5FEEBE8FC4707F /* APIClient.swift in Sources */,
 				EDA6F0DA6B8A943327A36474 /* AppEnvironment.swift in Sources */,
+				5867DBBE9C2334EA21BB3AE3 /* AppleEcosystemView.swift in Sources */,
 				991719C7D26AC6E40CBC3E68 /* AudioPlayer.swift in Sources */,
 				A76BC345356F8C8B0F18B92F /* AudioRecorder.swift in Sources */,
 				3195FF01952DCEB840D3C14F /* Brief.swift in Sources */,
 				D94CEC9BA778B789E8FC00AB /* BriefingView.swift in Sources */,
 				F73FC4A98E53CB19EC9A0CEB /* CaptureFlowView.swift in Sources */,
 				29E134E2219AB6C5C4FBC64D /* CollaborationModels.swift in Sources */,
+				E3EC1E2B2B78D88D7874A012 /* ConsentAuditSheet.swift in Sources */,
 				A1E4D8EB9C82BE40A17810BE /* DashboardView.swift in Sources */,
+				DC72E97B011FB86E33E6DD8E /* DecisionHistoryView.swift in Sources */,
 				CE8E764132617AEAC9C97479 /* DiscussionDetailView.swift in Sources */,
+				00BEF17E34D5A613A35E89B3 /* DiscussionReportReviewView.swift in Sources */,
 				32C8B6C1E0041543EB69A25D /* EaseApp.swift in Sources */,
 				4A64F98E70D3DFD363CA7F4F /* EventKitService.swift in Sources */,
 				0A7EE0E08DA723F2AB98DFC5 /* ExtractionItems.swift in Sources */,
@@ -390,11 +434,15 @@
 				640BF04F84862105C2349B89 /* MembersView.swift in Sources */,
 				E1B797A5A17D4F1E36E2CFBC /* MemoryLink.swift in Sources */,
 				4315DF7B6E8058FDCF565698 /* OfflineRecordingQueue.swift in Sources */,
+				CC213C2A03D092ED9B6D1F66 /* PlanningView.swift in Sources */,
 				669F8BCBEE78BA1FE8B3A85B /* Project.swift in Sources */,
 				9E0C03903B06EBE6D29B47B0 /* ProjectMemoryView.swift in Sources */,
+				AD16CAB5EA4A25866A4A0D30 /* ProjectSpaceContainerView.swift in Sources */,
 				DC5AB4F5BB3CFC94623B9B6D /* ProjectSpaceView.swift in Sources */,
+				84D700E7AFD9E743CCFE06CC /* ScheduleDiscussionSheet.swift in Sources */,
 				8C32BF91ECF71AA0796BECDF /* SettingsView.swift in Sources */,
 				C7A0E615854C29055FDEE823 /* SignupView.swift in Sources */,
+				4825E5F1347E3BB6F99175C7 /* SpeakerNameEditSheet.swift in Sources */,
 				53EECE517ACF1A6555F2BBCB /* SpeechSynthesizerService.swift in Sources */,
 				328414BE65D73B20DD5A30B7 /* TasksDependenciesView.swift in Sources */,
 				D0FE881240F49C2F062B75CF /* TranscriptSegment.swift in Sources */,

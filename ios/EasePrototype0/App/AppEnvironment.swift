@@ -14,6 +14,16 @@ final class AppEnvironment: ObservableObject {
     )
     @Published var projects: [Project] = [
         Project(
+            id: "project-product-launch",
+            name: "Product Launch",
+            description: "Flagship Q1 Product Launch: Multi-Platform AI Memory & Collaboration.",
+            domain: "startup",
+            languageCode: "auto",
+            recordingPolicyText: "All discussions require explicit affirmative consent. Diarization and biometric enrollment enabled.",
+            role: "owner",
+            createdAt: nil
+        ),
+        Project(
             id: "ease-core-space",
             name: "EASE Architecture Space",
             description: "In-person discussion capture, speaker separation & cross-discussion memory.",
