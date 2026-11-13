@@ -178,3 +178,4 @@ struct ProjectSpaceContainerView: View {
         newProjectName = ""
     }
 }
+

@@ -91,3 +91,4 @@ All developers build on top of these shared models, protocols, and design compon
 | **Settings & Privacy Hub** | `ios/EasePrototype0/Views/Settings/SettingsView.swift` | View | Account, Consent Records audit, Biometric vault purge. |
 | **Apple Reminders Service** | `ios/EasePrototype0/Services/EventKitService.swift` | Service | EventKit integration to push tasks to Apple Reminders app. |
 | **Backend RBAC & Tasks API** | `backend/app/api/v1/tasks.py`<br>`backend/app/core/security.py` | API / Core | 4 roles permissions, dependency tree, blocker notification. |
+

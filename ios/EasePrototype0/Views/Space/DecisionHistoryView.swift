@@ -196,3 +196,4 @@ struct DecisionHistoryView: View {
         }
     }
 }
+

@@ -124,3 +124,4 @@
 - [ ] Verify clean compilation of watchOS target (`EaseWatch`).
 - [ ] Verify clean compilation of Widget target (`EaseWidget`).
 - [ ] Commit all milestones and push to GitHub repository.
+

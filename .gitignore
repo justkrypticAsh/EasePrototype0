@@ -40,6 +40,8 @@ DerivedData/
 *.xcworkspace/xcuserdata/
 *.xcworkspace/xcshareddata/
 .DS_Store
+ios 2/
+* 2/
 
 # Node
 node_modules/
