@@ -10,7 +10,7 @@ struct ProjectSpaceView: View {
 
     var body: some View {
         ZStack {
-            Color(red: 0.05, green: 0.07, blue: 0.12).ignoresSafeArea()
+            Color.easeBackground.ignoresSafeArea()
 
             VStack(spacing: 0) {
                 // Space Header
@@ -21,20 +21,20 @@ struct ProjectSpaceView: View {
                             .foregroundColor(.white)
                         Text("\(project.domain.capitalized) Space &bull; \(project.languageCode.uppercased())")
                             .font(.caption)
-                            .foregroundColor(.cyan)
+                            .foregroundColor(.easeCyan)
                     }
                     Spacer()
                     Button {
                         showCaptureFlow = true
                     } label: {
                         HStack {
-                            Image(systemName: "record.circle")
+                            Circle().fill(Color.easeRuby).frame(width: 6, height: 6)
                             Text("Capture")
                         }
                         .font(.caption.bold())
-                        .padding(.horizontal, 12)
+                        .padding(.horizontal, 14)
                         .padding(.vertical, 8)
-                        .background(Color.cyan)
+                        .background(Color.easeCyan)
                         .foregroundColor(.black)
                         .cornerRadius(20)
                     }
@@ -75,7 +75,7 @@ struct ProjectSpaceView: View {
 
                     MembersView(projectId: project.id)
                         .tabItem {
-                            Label("Members", systemImage: "person.2")
+                            Label("Team & iCloud", systemImage: "person.2.badge.gearshape.fill")
                         }
                         .tag(5)
                 }
@@ -96,9 +96,9 @@ struct ProjectSpaceView: View {
             VStack(spacing: 16) {
                 // Quick Stats
                 HStack(spacing: 12) {
-                    statCard(title: "Discussions", value: "\(meetings.count)", icon: "waveform", color: .cyan)
-                    statCard(title: "Status", value: "Active", icon: "shield.checkered", color: .green)
-                    statCard(title: "Domain", value: project.domain.capitalized, icon: "briefcase", color: .purple)
+                    statCard(title: "Discussions", value: "\(meetings.count)", icon: "waveform", color: .easeCyan)
+                    statCard(title: "Status", value: "Active", icon: "shield.checkered", color: .easeEmerald)
+                    statCard(title: "Domain", value: project.domain.capitalized, icon: "briefcase", color: .easePurple)
                 }
 
                 // Recent Discussions
@@ -121,8 +121,7 @@ struct ProjectSpaceView: View {
                     }
                 }
                 .padding()
-                .background(Color(red: 0.12, green: 0.16, blue: 0.24))
-                .cornerRadius(12)
+                .glassCard(cornerRadius: 16)
             }
             .padding()
         }
@@ -154,8 +153,7 @@ struct ProjectSpaceView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
-        .background(Color(red: 0.12, green: 0.16, blue: 0.24))
-        .cornerRadius(10)
+        .glassCard(cornerRadius: 14)
     }
 
     private func meetingRow(_ m: MeetingSummary) -> some View {
@@ -169,17 +167,14 @@ struct ProjectSpaceView: View {
                     .foregroundColor(.gray)
             }
             Spacer()
-            Text(m.status.uppercased())
-                .font(.caption2.bold())
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
-                .background(m.isReady ? Color.green.opacity(0.2) : Color.orange.opacity(0.2))
-                .foregroundColor(m.isReady ? .green : .orange)
-                .cornerRadius(4)
+            GlassStatusPill(
+                title: m.status,
+                icon: nil,
+                color: m.isReady ? .easeEmerald : .easeAmber
+            )
         }
         .padding()
-        .background(Color(red: 0.10, green: 0.14, blue: 0.22))
-        .cornerRadius(8)
+        .glassCard(cornerRadius: 12)
     }
 
     private func loadMeetings() async {

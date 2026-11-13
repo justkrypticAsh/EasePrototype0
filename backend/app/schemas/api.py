@@ -65,7 +65,64 @@ class ProjectMemberResponse(BaseModel):
     email: str
     full_name: str
     role: str
+    apple_id: Optional[str] = None
     joined_at: datetime
+
+
+class CollaboratorAddRequest(BaseModel):
+    apple_id: str = Field(..., description="Apple ID or iCloud email of collaborator")
+    full_name: str = Field(..., min_length=2)
+    role: str = "member"  # owner | member | reviewer
+
+
+class TaskDependencyResponse(BaseModel):
+    id: str
+    meeting_id: str
+    project_id: str
+    text: str
+    status: str
+    owner_name: Optional[str] = None
+    owner_apple_id: Optional[str] = None
+    owner_user_id: Optional[str] = None
+    depends_on: Optional[str] = None
+    depends_on_task_id: Optional[str] = None
+    blocked_by_user_name: Optional[str] = None
+    blocked_by_apple_id: Optional[str] = None
+    is_blocked: bool = False
+    created_at: datetime
+
+
+class TaskDependencyCreateRequest(BaseModel):
+    depends_on_task_id: Optional[str] = None
+    depends_on: Optional[str] = None
+    blocked_by_user_name: Optional[str] = None
+    blocked_by_apple_id: Optional[str] = None
+
+
+class NudgeRequest(BaseModel):
+    message: Optional[str] = None
+
+
+class ICloudReportFile(BaseModel):
+    filename: str
+    meeting_id: str
+    title: str
+    content_markdown: str
+    summary: str
+    decisions_count: int
+    claims_count: int
+    prerequisites_count: int
+    created_at: datetime
+
+
+class ICloudSyncResponse(BaseModel):
+    project_id: str
+    project_name: str
+    folder_name: str
+    icloud_path: str
+    total_reports: int
+    reports: List[ICloudReportFile]
+    last_synced_at: datetime
 
 
 class InviteCreateRequest(BaseModel):

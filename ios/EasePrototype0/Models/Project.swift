@@ -23,12 +23,13 @@ struct Project: Codable, Identifiable, Hashable {
     }
 }
 
-struct ProjectMember: Codable, Identifiable {
+struct ProjectMember: Codable, Identifiable, Hashable {
     var id: String { userId }
     let userId: String
     let email: String
     let fullName: String
     let role: String
+    var appleId: String?
     let joinedAt: String?
 
     enum CodingKeys: String, CodingKey {
@@ -36,6 +37,7 @@ struct ProjectMember: Codable, Identifiable {
         case email
         case fullName = "full_name"
         case role
+        case appleId = "apple_id"
         case joinedAt = "joined_at"
     }
 }

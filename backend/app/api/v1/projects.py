@@ -21,6 +21,9 @@ from backend.app.models.memory import Link, MemoryEmbedding
 from backend.app.models.project import Project, ProjectMember, SpeakerProfile
 from backend.app.models.user import Invite, User
 from backend.app.schemas.api import (
+    CollaboratorAddRequest,
+    ICloudReportFile,
+    ICloudSyncResponse,
     InviteCreateRequest,
     InviteResponse,
     ProjectCreateRequest,
@@ -159,7 +162,7 @@ async def list_members(
     db: Annotated[AsyncSession, Depends(get_db)]
 ):
     stmt = (
-        select(User, ProjectMember.role, ProjectMember.joined_at)
+        select(User, ProjectMember.role, ProjectMember.joined_at, ProjectMember.apple_id)
         .join(ProjectMember, User.id == ProjectMember.user_id)
         .where(ProjectMember.project_id == project_id)
     )
@@ -170,10 +173,197 @@ async def list_members(
             email=u.email,
             full_name=u.full_name,
             role=role,
+            apple_id=apple_id or u.email,
             joined_at=joined_at
         )
-        for u, role, joined_at in res.all()
+        for u, role, joined_at, apple_id in res.all()
     ]
+
+
+@router.post("/projects/{project_id}/collaborators", response_model=ProjectMemberResponse, status_code=status.HTTP_201_CREATED)
+async def add_collaborator_by_apple_id(
+    project_id: str,
+    request: CollaboratorAddRequest,
+    current_user: Annotated[User, Depends(get_current_user)],
+    membership: Annotated[ProjectMember, Depends(require_project_membership)],
+    db: Annotated[AsyncSession, Depends(get_db)]
+):
+    """Adds a collaborator via their Apple ID / iCloud address."""
+    clean_apple_id = request.apple_id.strip().lower()
+
+    # Find or provision user account
+    stmt = select(User).where(User.email == clean_apple_id)
+    res = await db.execute(stmt)
+    user = res.scalar_one_or_none()
+
+    if not user:
+        from backend.app.core.security import hash_password
+        user = User(
+            email=clean_apple_id,
+            hashed_password=hash_password(secrets.token_urlsafe(16)),
+            full_name=request.full_name.strip(),
+            is_active=True
+        )
+        db.add(user)
+        await db.flush()
+
+    # Check if already a member
+    mem_stmt = select(ProjectMember).where(
+        ProjectMember.project_id == project_id,
+        ProjectMember.user_id == user.id
+    )
+    existing_mem = (await db.execute(mem_stmt)).scalar_one_or_none()
+    if existing_mem:
+        existing_mem.role = request.role
+        existing_mem.apple_id = clean_apple_id
+        await db.commit()
+        await db.refresh(existing_mem)
+        return ProjectMemberResponse(
+            user_id=user.id,
+            email=user.email,
+            full_name=user.full_name,
+            role=existing_mem.role,
+            apple_id=clean_apple_id,
+            joined_at=existing_mem.joined_at
+        )
+
+    new_member = ProjectMember(
+        project_id=project_id,
+        user_id=user.id,
+        apple_id=clean_apple_id,
+        role=request.role,
+        policy_accepted_at=datetime.now(timezone.utc)
+    )
+    db.add(new_member)
+    await db.flush()
+
+    # Write AuditLog
+    import json
+    audit = AuditLog(
+        project_id=project_id,
+        entity_type="project_member",
+        entity_id=new_member.id,
+        actor_user_id=current_user.id,
+        action="add_collaborator_apple_id",
+        new_state_json=json.dumps({"apple_id": clean_apple_id, "role": request.role, "name": request.full_name}),
+        reason="Added collaborator via Apple ID"
+    )
+    db.add(audit)
+
+    await db.commit()
+    await db.refresh(new_member)
+
+    return ProjectMemberResponse(
+        user_id=user.id,
+        email=user.email,
+        full_name=user.full_name,
+        role=new_member.role,
+        apple_id=clean_apple_id,
+        joined_at=new_member.joined_at
+    )
+
+
+@router.get("/projects/{project_id}/icloud/reports", response_model=ICloudSyncResponse)
+async def get_icloud_shared_reports(
+    project_id: str,
+    membership: Annotated[ProjectMember, Depends(require_project_membership)],
+    db: Annotated[AsyncSession, Depends(get_db)]
+):
+    """Generates Markdown and formatted executive summary reports for sync with iCloud Drive."""
+    project = await db.get(Project, project_id)
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+
+    stmt = (
+        select(Meeting)
+        .where(Meeting.project_id == project_id)
+        .order_by(Meeting.created_at.desc())
+    )
+    meetings = (await db.execute(stmt)).scalars().all()
+
+    report_files = []
+    clean_proj_name = "".join(c for c in project.name if c.isalnum() or c in (" ", "-", "_")).strip()
+    safe_folder_name = clean_proj_name or "EASE_Project"
+
+    for m in meetings:
+        dec_stmt = select(Decision).where(Decision.meeting_id == m.id)
+        decisions = (await db.execute(dec_stmt)).scalars().all()
+
+        claim_stmt = select(Claim).where(Claim.meeting_id == m.id)
+        claims = (await db.execute(claim_stmt)).scalars().all()
+
+        prereq_stmt = select(Prerequisite).where(Prerequisite.meeting_id == m.id)
+        prereqs = (await db.execute(prereq_stmt)).scalars().all()
+
+        date_str = m.created_at.strftime("%Y-%m-%d")
+        safe_title = "".join(c for c in m.title if c.isalnum() or c in (" ", "-", "_")).strip()
+        filename = f"{date_str}_{safe_title.replace(' ', '_')}_Report.md"
+
+        md_lines = [
+            f"# {m.title}",
+            f"**Project**: {project.name} ({project.domain.title()} Domain)",
+            f"**Date**: {m.created_at.strftime('%B %d, %Y at %H:%M UTC')}",
+            f"**Audio Duration**: {int(m.audio_duration_seconds)}s",
+            f"**Status**: {m.status.upper()}",
+            "",
+            "## 📌 Executive Summary",
+            m.summary or "Discussion recorded and processed via EASE Intelligence.",
+            "",
+            "## 🎯 Key Decisions",
+        ]
+        if decisions:
+            for d in decisions:
+                decided = f" *(Decided by {d.decided_by})*" if d.decided_by else ""
+                md_lines.append(f"- **{d.text}**{decided} `[{d.timestamp_start_ms//1000}s - {d.timestamp_end_ms//1000}s]`")
+        else:
+            md_lines.append("- *No explicit decisions logged in this session.*")
+
+        md_lines.extend(["", "## ⚡ Key Claims & Promises"])
+        if claims:
+            for c in claims:
+                md_lines.append(f"- `[{c.type.upper()}]` **{c.speaker_label}**: {c.text} `[{c.timestamp_start_ms//1000}s - {c.timestamp_end_ms//1000}s]` (Status: {c.status.upper()})")
+        else:
+            md_lines.append("- *No claims extracted.*")
+
+        md_lines.extend(["", "## ⛓️ Prerequisites & Task Dependencies"])
+        if prereqs:
+            for p in prereqs:
+                dep_info = f" *(Depends on: {p.depends_on})*" if p.depends_on else ""
+                block_info = f" *(Blocked by: {p.blocked_by_user_name})*" if p.blocked_by_user_name else ""
+                owner = f" [Owner: {p.owner_mentioned or 'Unassigned'}]"
+                md_lines.append(f"- [{p.status.upper()}] **{p.text}**{owner}{dep_info}{block_info}")
+        else:
+            md_lines.append("- *No action prerequisites noted.*")
+
+        md_lines.extend([
+            "",
+            "---",
+            "*Generated by EASE Intelligence • Syncable to Apple iCloud Drive / Files*"
+        ])
+
+        report_files.append(
+            ICloudReportFile(
+                filename=filename,
+                meeting_id=m.id,
+                title=m.title,
+                content_markdown="\n".join(md_lines),
+                summary=m.summary or "",
+                decisions_count=len(decisions),
+                claims_count=len(claims),
+                prerequisites_count=len(prereqs),
+                created_at=m.created_at
+            )
+        )
+
+    return ICloudSyncResponse(
+        project_id=project_id,
+        project_name=project.name,
+        folder_name=safe_folder_name,
+        icloud_path=f"iCloud Drive/EASE/{safe_folder_name}/Reports",
+        total_reports=len(report_files),
+        reports=report_files,
+        last_synced_at=datetime.now(timezone.utc)
+    )
 
 
 @router.post("/projects/{project_id}/invites", response_model=InviteResponse)

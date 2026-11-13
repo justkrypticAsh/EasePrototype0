@@ -12,9 +12,9 @@ T = TypeVar("T", bound=BaseModel)
 
 
 class GeminiLLMAdapter(BaseLLMAdapter):
-    """Adapter for Google Gemini models (Gemini Flash Lite default)."""
+    """Adapter for Google Gemini models (Gemini Flash default)."""
 
-    DEFAULT_MODEL = "gemini-2.5-flash-lite"
+    DEFAULT_MODEL = "gemini-1.5-flash"
     BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models"
 
     def __init__(self, api_key: Optional[str] = None, model: str = DEFAULT_MODEL):

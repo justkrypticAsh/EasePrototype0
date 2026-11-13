@@ -29,6 +29,7 @@ class Settings(BaseSettings):
     # Providers
     STT_PROVIDER: str = "assemblyai"      # assemblyai | deepgram
     LLM_PROVIDER: str = "gemini"          # gemini | claude
+    GEMINI_MODEL: str = "gemini-1.5-flash" # gemini-1.5-flash default
     EMBEDDING_PROVIDER: str = "gemini"    # gemini
 
     # API Keys

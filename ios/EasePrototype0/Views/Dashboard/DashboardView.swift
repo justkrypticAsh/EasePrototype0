@@ -11,51 +11,101 @@ struct DashboardView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(red: 0.05, green: 0.07, blue: 0.12).ignoresSafeArea()
+                Color.easeBackground.ignoresSafeArea()
+
+                // Ambient background lighting
+                VStack {
+                    HStack {
+                        Circle()
+                            .fill(Color.easeCyan.opacity(0.12))
+                            .frame(width: 280, height: 280)
+                            .blur(radius: 80)
+                        Spacer()
+                    }
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Circle()
+                            .fill(Color.easePurple.opacity(0.1))
+                            .frame(width: 250, height: 250)
+                            .blur(radius: 70)
+                    }
+                }
+                .ignoresSafeArea()
 
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
-                        // User Welcome Header
-                        HStack {
+                    VStack(alignment: .leading, spacing: 22) {
+                        // User Welcome Header & Quick Capture
+                        HStack(alignment: .center) {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text("Welcome back,")
-                                    .font(.subheadline)
+                                    .font(.system(size: 13, weight: .medium))
                                     .foregroundColor(.gray)
                                 Text(env.currentUser?.fullName ?? "Executive")
-                                    .font(.title2.bold())
+                                    .font(.system(size: 24, weight: .bold, design: .rounded))
                                     .foregroundColor(.white)
                             }
+
                             Spacer()
-                            // Quick Capture Button
+
+                            // Quick Capture Button with Glass Glow
                             Button {
+                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                                 showCaptureFlow = true
                             } label: {
-                                HStack {
-                                    Image(systemName: "record.circle")
+                                HStack(spacing: 6) {
+                                    Circle()
+                                        .fill(Color.easeRuby)
+                                        .frame(width: 8, height: 8)
                                     Text("Capture")
+                                        .font(.system(size: 13, weight: .bold, design: .rounded))
                                 }
-                                .font(.subheadline.bold())
-                                .padding(.horizontal, 14)
-                                .padding(.vertical, 8)
-                                .background(Color.cyan)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 10)
+                                .background(Color.easeCyan)
                                 .foregroundColor(.black)
-                                .cornerRadius(20)
+                                .clipShape(Capsule())
+                                .shadow(color: Color.easeCyan.opacity(0.4), radius: 10, x: 0, y: 4)
                             }
                         }
                         .padding(.horizontal)
 
+                        // iCloud Sync Status Pill
+                        HStack {
+                            Image(systemName: "icloud.fill")
+                                .font(.system(size: 12))
+                                .foregroundColor(.easeCyan)
+                            Text("iCloud Workspace Connected &bull; Apple ID Sync Active")
+                                .font(.system(size: 11, weight: .medium))
+                                .foregroundColor(.white.opacity(0.9))
+                            Spacer()
+                            Circle()
+                                .fill(Color.easeEmerald)
+                                .frame(width: 6, height: 6)
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .glassCard(cornerRadius: 12)
+                        .padding(.horizontal)
+
                         // Projects Section
-                        VStack(alignment: .leading, spacing: 12) {
+                        VStack(alignment: .leading, spacing: 14) {
                             HStack {
-                                Text("My Projects")
-                                    .font(.headline)
+                                Text("Project Spaces")
+                                    .font(.system(size: 18, weight: .bold, design: .rounded))
                                     .foregroundColor(.white)
                                 Spacer()
-                                Button("+ New Project") {
+                                Button {
                                     showNewProjectSheet = true
+                                } label: {
+                                    HStack(spacing: 4) {
+                                        Image(systemName: "plus")
+                                            .font(.system(size: 10, weight: .bold))
+                                        Text("New Space")
+                                            .font(.system(size: 12, weight: .bold))
+                                    }
+                                    .foregroundColor(.easeCyan)
                                 }
-                                .font(.footnote.bold())
-                                .foregroundColor(.cyan)
                             }
                             .padding(.horizontal)
 
@@ -66,7 +116,7 @@ struct DashboardView: View {
                                     .padding(.horizontal)
                             } else {
                                 ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack(spacing: 12) {
+                                    HStack(spacing: 14) {
                                         ForEach(env.projects) { proj in
                                             NavigationLink(destination: ProjectSpaceView(project: proj)) {
                                                 projectCard(proj)
@@ -78,46 +128,68 @@ struct DashboardView: View {
                             }
                         }
 
-                        // Recent Activity & Pending Tasks
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("Recent Follow-ups")
-                                .font(.headline)
+                        // Recent Follow-ups & Cross-Collaborator Blockers
+                        VStack(alignment: .leading, spacing: 14) {
+                            Text("Collaborator Action Feed")
+                                .font(.system(size: 18, weight: .bold, design: .rounded))
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
 
-                            VStack(spacing: 8) {
-                                HStack {
-                                    Circle().fill(Color.orange).frame(width: 8, height: 8)
-                                    Text("Finalize OpenAPI specification")
-                                        .font(.subheadline)
-                                        .foregroundColor(.white)
-                                    Spacer()
-                                    Text("By Friday")
-                                        .font(.caption2)
-                                        .foregroundColor(.gray)
-                                }
-                                .padding()
-                                .background(Color(red: 0.12, green: 0.16, blue: 0.24))
-                                .cornerRadius(8)
+                            VStack(spacing: 10) {
+                                // Blocked Task Alert
+                                HStack(spacing: 12) {
+                                    ZStack {
+                                        Circle()
+                                            .fill(Color.easeAmber.opacity(0.2))
+                                            .frame(width: 34, height: 34)
+                                        Image(systemName: "lock.fill")
+                                            .font(.system(size: 13, weight: .bold))
+                                            .foregroundColor(.easeAmber)
+                                    }
 
-                                HStack {
-                                    Circle().fill(Color.green).frame(width: 8, height: 8)
-                                    Text("Client Security Review Sign-off")
-                                        .font(.subheadline)
-                                        .foregroundColor(.white)
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Production Database Migration")
+                                            .font(.system(size: 14, weight: .semibold))
+                                            .foregroundColor(.white)
+                                        Text("Blocked by Priya's action: Security Architecture Review")
+                                            .font(.system(size: 11))
+                                            .foregroundColor(.easeAmber)
+                                    }
                                     Spacer()
-                                    Text("Confirmed")
-                                        .font(.caption2)
-                                        .foregroundColor(.green)
+                                    GlassStatusPill(title: "Blocked", icon: nil, color: .easeAmber, pulse: true)
                                 }
-                                .padding()
-                                .background(Color(red: 0.12, green: 0.16, blue: 0.24))
-                                .cornerRadius(8)
+                                .padding(14)
+                                .glassCard(cornerRadius: 16, glowColor: .easeAmber, glowRadius: 4)
+
+                                // Completed Prerequisite
+                                HStack(spacing: 12) {
+                                    ZStack {
+                                        Circle()
+                                            .fill(Color.easeEmerald.opacity(0.2))
+                                            .frame(width: 34, height: 34)
+                                        Image(systemName: "checkmark")
+                                            .font(.system(size: 13, weight: .bold))
+                                            .foregroundColor(.easeEmerald)
+                                    }
+
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Biometric Encryption Vault Implementation")
+                                            .font(.system(size: 14, weight: .semibold))
+                                            .foregroundColor(.white)
+                                        Text("AES-256 Fernet voice embedding protection verified")
+                                            .font(.system(size: 11))
+                                            .foregroundColor(.gray)
+                                    }
+                                    Spacer()
+                                    GlassStatusPill(title: "Done", icon: nil, color: .easeEmerald)
+                                }
+                                .padding(14)
+                                .glassCard(cornerRadius: 16)
                             }
                             .padding(.horizontal)
                         }
                     }
-                    .padding(.vertical)
+                    .padding(.vertical, 16)
                 }
             }
             .navigationTitle("EASE Intelligence")
@@ -132,85 +204,104 @@ struct DashboardView: View {
     }
 
     private func projectCard(_ project: Project) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Text(project.domain.uppercased())
-                    .font(.system(size: 9, weight: .bold))
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(Color.cyan.opacity(0.2))
-                    .foregroundColor(.cyan)
-                    .cornerRadius(4)
+                    .font(.system(size: 9, weight: .heavy))
+                    .padding(.horizontal, 7)
+                    .padding(.vertical, 3)
+                    .background(Color.easeCyan.opacity(0.2))
+                    .foregroundColor(.easeCyan)
+                    .clipShape(Capsule())
+
                 Spacer()
-                Text(project.role?.capitalized ?? "Member")
-                    .font(.caption2)
-                    .foregroundColor(.gray)
+
+                HStack(spacing: 3) {
+                    Image(systemName: "icloud.fill")
+                        .font(.system(size: 9))
+                    Text(project.role?.capitalized ?? "Owner")
+                        .font(.system(size: 10, weight: .semibold))
+                }
+                .foregroundColor(.gray)
             }
 
             Text(project.name)
-                .font(.body.bold())
+                .font(.system(size: 16, weight: .bold, design: .rounded))
                 .foregroundColor(.white)
                 .lineLimit(1)
 
-            Text(project.description ?? "Active project space")
-                .font(.caption2)
+            Text(project.description ?? "Active project space with cross-discussion memory.")
+                .font(.system(size: 11))
                 .foregroundColor(.gray)
                 .lineLimit(2)
 
             Spacer()
 
             HStack {
-                Image(systemName: "folder.fill")
-                    .foregroundColor(.gray)
-                Text("Open Space")
-                    .font(.caption2.bold())
-                    .foregroundColor(.cyan)
+                HStack(spacing: 4) {
+                    Image(systemName: "brain.head.profile")
+                        .font(.system(size: 10))
+                    Text("Enter Space")
+                        .font(.system(size: 11, weight: .bold))
+                }
+                .foregroundColor(.easeCyan)
+
                 Spacer()
-                Image(systemName: "arrow.right")
-                    .foregroundColor(.gray)
-                    .font(.caption2)
+
+                Image(systemName: "arrow.right.circle.fill")
+                    .font(.system(size: 16))
+                    .foregroundColor(.easeCyan)
             }
         }
-        .frame(width: 170, height: 140)
-        .padding()
-        .background(Color(red: 0.12, green: 0.16, blue: 0.24))
-        .cornerRadius(12)
+        .frame(width: 190, height: 155)
+        .padding(16)
+        .glassCard(cornerRadius: 20, glowColor: .easeCyan, glowRadius: 4, strokeOpacity: 0.3)
     }
 
     private var newProjectSheet: some View {
         NavigationStack {
             ZStack {
-                Color(red: 0.05, green: 0.07, blue: 0.12).ignoresSafeArea()
+                Color.easeBackground.ignoresSafeArea()
 
                 VStack(spacing: 20) {
-                    TextField("Project Name", text: $newProjectName)
-                        .padding()
-                        .background(Color(red: 0.12, green: 0.16, blue: 0.24))
-                        .cornerRadius(8)
-                        .foregroundColor(.white)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("PROJECT SPACE NAME")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundColor(.easeCyan)
 
-                    Picker("Domain Guidance Preset", selection: $newProjectDomain) {
-                        Text("Consulting").tag("consulting")
-                        Text("Startup").tag("startup")
-                        Text("Construction").tag("construction")
-                        Text("Research").tag("research")
-                        Text("General").tag("general")
+                        TextField("e.g. Mobile Core Architecture", text: $newProjectName)
+                            .padding()
+                            .foregroundColor(.white)
+                            .glassCard(cornerRadius: 12)
                     }
-                    .pickerStyle(.menu)
-                    .padding()
-                    .background(Color(red: 0.12, green: 0.16, blue: 0.24))
-                    .cornerRadius(8)
-                    .foregroundColor(.white)
 
-                    Button("Create Space") {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("DOMAIN GUIDANCE PRESET (GEMINI FLASH)")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundColor(.easeCyan)
+
+                        Picker("Preset", selection: $newProjectDomain) {
+                            Text("Consulting").tag("consulting")
+                            Text("Startup").tag("startup")
+                            Text("Construction").tag("construction")
+                            Text("Research").tag("research")
+                            Text("General").tag("general")
+                        }
+                        .pickerStyle(.segmented)
+                    }
+
+                    Button {
                         createProject()
+                    } label: {
+                        Text("Create Space & iCloud Folder")
+                            .font(.system(size: 14, weight: .bold))
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.easeCyan)
+                            .foregroundColor(.black)
+                            .cornerRadius(12)
                     }
                     .disabled(newProjectName.isEmpty)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.cyan)
-                    .foregroundColor(.black)
-                    .cornerRadius(8)
 
                     Spacer()
                 }

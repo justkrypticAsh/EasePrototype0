@@ -12,6 +12,8 @@
 		193B0AA2E09E770E220F8E11 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF30153FD87A77A0597FF9C /* WatchContentView.swift */; };
 		1B8749D50CC0727FAA3FE224 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39F2D3531975E58A390F53 /* KeychainHelper.swift */; };
 		1BF831105C196D655FC09E5E /* EaseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C72D1ABB9163A7B9C6100F /* EaseWidget.swift */; };
+		29E134E2219AB6C5C4FBC64D /* CollaborationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42B4DE3FDE7550921BFAEF /* CollaborationModels.swift */; };
+		2B463B01935320DC17DA8E4B /* GlassComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F63E3A55BF46EE2311C732 /* GlassComponents.swift */; };
 		3195FF01952DCEB840D3C14F /* Brief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062B880F0979EB77D6253F /* Brief.swift */; };
 		328414BE65D73B20DD5A30B7 /* TasksDependenciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C24C8A5454B7730C3A0DF1 /* TasksDependenciesView.swift */; };
 		32C8B6C1E0041543EB69A25D /* EaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF96364BA2561232366AFF2 /* EaseApp.swift */; };
@@ -23,6 +25,7 @@
 		6A889E1E12A24B1ACC249C3A /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091BBB1A39DF2929B4A62AB /* Meeting.swift */; };
 		6F7AA7685C5FEEBE8FC4707F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21AF652FDF288396C6F856 /* APIClient.swift */; };
 		8C32BF91ECF71AA0796BECDF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772DCA7D715B0BBE70FEF71 /* SettingsView.swift */; };
+		8DF49E6A23C48A0695D86DFA /* ICloudWorkspaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203DDCF3166FCF899EE27397 /* ICloudWorkspaceService.swift */; };
 		94C532DF09A01FD03B6CC7DB /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C5B191CDFA4AD102943A14 /* WatchApp.swift */; };
 		991719C7D26AC6E40CBC3E68 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE9FA0948A1DA4200D8F0B2 /* AudioPlayer.swift */; };
 		9E0C03903B06EBE6D29B47B0 /* ProjectMemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AABD2F8506B34787BC152A6 /* ProjectMemoryView.swift */; };
@@ -51,6 +54,7 @@
 		12407DA2D8AF3329A6504A7F /* DiscussionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionDetailView.swift; sourceTree = "<group>"; };
 		14D4C43F5963D65A9BDD63A1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1FD14DA83F7E0E77CF1B9AE0 /* EaseWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = EaseWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		203DDCF3166FCF899EE27397 /* ICloudWorkspaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudWorkspaceService.swift; sourceTree = "<group>"; };
 		2FE9FA0948A1DA4200D8F0B2 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		31E327EA323350E6437412A4 /* SpeechSynthesizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerService.swift; sourceTree = "<group>"; };
 		3E7C1703A4FBC71EFFC7A0CE /* ProjectSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSpaceView.swift; sourceTree = "<group>"; };
@@ -73,11 +77,13 @@
 		9AABD2F8506B34787BC152A6 /* ProjectMemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemoryView.swift; sourceTree = "<group>"; };
 		9B6DBCAC92E7D0AF2F4315A8 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		AC374F748E874C7B5C2C6731 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C5F63E3A55BF46EE2311C732 /* GlassComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassComponents.swift; sourceTree = "<group>"; };
 		CB21AF652FDF288396C6F856 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		DBBC0D9EDDF8AB5368C43B65 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E091BBB1A39DF2929B4A62AB /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		E1C72D1ABB9163A7B9C6100F /* EaseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseWidget.swift; sourceTree = "<group>"; };
 		E9B5E07209652E1FE7B85D9C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		EA42B4DE3FDE7550921BFAEF /* CollaborationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationModels.swift; sourceTree = "<group>"; };
 		EC66161454BE9829529A4118 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FCD9FA40EE26A5F14D0391A9 /* EaseWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EaseWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				72062B880F0979EB77D6253F /* Brief.swift */,
+				EA42B4DE3FDE7550921BFAEF /* CollaborationModels.swift */,
 				57DE6CE7C8F24C867989268A /* ExtractionItems.swift */,
 				E091BBB1A39DF2929B4A62AB /* Meeting.swift */,
 				520A5AD2CFACFDCC295C9CAC /* MemoryLink.swift */,
@@ -176,6 +183,7 @@
 			children = (
 				277BAC9364B5D9251A5C2215 /* Auth */,
 				5BBE9CEC0299C8EB48C1C897 /* Capture */,
+				B638ED2B586CF22B1933DECD /* Components */,
 				475751756C15975A14832191 /* Dashboard */,
 				7809257D46330051945D35ED /* Settings */,
 				E610E559E6C9BB19A9021358 /* Space */,
@@ -191,6 +199,14 @@
 				610B524A4C22E08109F19719 /* EaseWidget */,
 				55993AB66B7248F508419A77 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		B638ED2B586CF22B1933DECD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C5F63E3A55BF46EE2311C732 /* GlassComponents.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		B94AF8C02B0F23E732C873EF /* EaseWatch */ = {
@@ -210,6 +226,7 @@
 				2FE9FA0948A1DA4200D8F0B2 /* AudioPlayer.swift */,
 				9B6DBCAC92E7D0AF2F4315A8 /* AudioRecorder.swift */,
 				4F4F18FB4574A367B2BA27E7 /* EventKitService.swift */,
+				203DDCF3166FCF899EE27397 /* ICloudWorkspaceService.swift */,
 				7C39F2D3531975E58A390F53 /* KeychainHelper.swift */,
 				54193FF30234CBA86B9B17E8 /* OfflineRecordingQueue.swift */,
 				31E327EA323350E6437412A4 /* SpeechSynthesizerService.swift */,
@@ -358,11 +375,14 @@
 				3195FF01952DCEB840D3C14F /* Brief.swift in Sources */,
 				D94CEC9BA778B789E8FC00AB /* BriefingView.swift in Sources */,
 				F73FC4A98E53CB19EC9A0CEB /* CaptureFlowView.swift in Sources */,
+				29E134E2219AB6C5C4FBC64D /* CollaborationModels.swift in Sources */,
 				A1E4D8EB9C82BE40A17810BE /* DashboardView.swift in Sources */,
 				CE8E764132617AEAC9C97479 /* DiscussionDetailView.swift in Sources */,
 				32C8B6C1E0041543EB69A25D /* EaseApp.swift in Sources */,
 				4A64F98E70D3DFD363CA7F4F /* EventKitService.swift in Sources */,
 				0A7EE0E08DA723F2AB98DFC5 /* ExtractionItems.swift in Sources */,
+				2B463B01935320DC17DA8E4B /* GlassComponents.swift in Sources */,
+				8DF49E6A23C48A0695D86DFA /* ICloudWorkspaceService.swift in Sources */,
 				1B8749D50CC0727FAA3FE224 /* KeychainHelper.swift in Sources */,
 				EB9C63557CEB5B6B1FAEE2E3 /* LoginView.swift in Sources */,
 				D97728AE726CCE8AA2DD89DF /* MainTabView.swift in Sources */,

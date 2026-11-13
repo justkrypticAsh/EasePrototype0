@@ -44,7 +44,12 @@ class Prerequisite(Base):
 
     text: Mapped[str] = mapped_column(Text, nullable=False)
     depends_on: Mapped[str | None] = mapped_column(Text, nullable=True)
+    depends_on_task_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
     owner_mentioned: Mapped[str | None] = mapped_column(String(255), nullable=True)
+
+    # Cross-collaborator blocker attribution
+    blocked_by_user_name: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    blocked_by_apple_id: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
     # Workflow & Assignment
     owner_user_id: Mapped[str | None] = mapped_column(String(36), index=True, nullable=True)
